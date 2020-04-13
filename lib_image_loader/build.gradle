@@ -1,11 +1,11 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion rootProject.android.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 28
+        minSdkVersion rootProject.android.minSdkVersion
+        targetSdkVersion rootProject.android.targetSdkVersion
         versionCode 1
         versionName "1.0"
     }
@@ -21,4 +21,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //glide相关依赖
+    implementation rootProject.depsLibs.glide
+    annotationProcessor rootProject.depsLibs.glide_Compiler
 }

@@ -25,4 +25,15 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation rootProject.depsLibs.appcompat
+    implementation rootProject.depsLibs.magicIndicator
+    implementation rootProject.depsLibs.butterKnife
+    annotationProcessor rootProject.depsLibs.butterKnife_Compiler
+    implementation rootProject.depsLibs.rxjava
+    implementation rootProject.depsLibs.rxandroid
+    implementation rootProject.depsLibs.eventbus
+    implementation rootProject.depsLibs.gson
+
+    implementation project(path: ':lib_common_ui')
+    implementation project(path: ':lib_network')
+    implementation project(path: ':lib_image_loader')
 }

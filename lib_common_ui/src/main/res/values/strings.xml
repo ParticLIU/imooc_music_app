@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">lib_common_ui</string>
+    <string name="title_activity_base">BaseActivity</string>
 </resources>

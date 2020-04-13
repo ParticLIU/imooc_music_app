@@ -6,13 +6,13 @@ def pomVersion = '1.0.0-snapshot'
 def pomDescription = 'the audio library for all projects'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion rootProject.android.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.android.minSdkVersion
+        targetSdkVersion rootProject.android.targetSdkVersion
+        versionCode rootProject.android.versionCode
+        versionName rootProject.android.versionName
     }
 
     buildTypes {
@@ -27,7 +27,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation rootProject.depsLibs.appcompat
 }
 
 uploadArchives{

@@ -1,11 +1,16 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion rootProject.android.compileSdkVersion
+
+    //设置不做方法数限制的检查
+    dexOptions{
+        jumboMode = true
+    }
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 28
+        minSdkVersion rootProject.android.minSdkVersion
+        targetSdkVersion rootProject.android.targetSdkVersion
         versionCode 1
         versionName "1.0"
     }
@@ -21,4 +26,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //api：和compile一致，对外部访问；compileOnly：编译时仅需要其API，但具体实现由其他Moudule实现
+    api rootProject.depsLibs.okhttp
+    implementation rootProject.depsLibs.logIntercepter
+    compileOnly rootProject.depsLibs.gson
 }
